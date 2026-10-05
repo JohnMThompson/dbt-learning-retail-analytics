@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    description: Raw retail data provided by the upstream ingestion process.
+
+    tables:
+      - name: customers
+        description: Raw customer records.
+
+        columns:
+          - name: customer_id
+            data_tests:
+              - unique
+              - not_null
+
+      - name: orders
+        description: Raw customer orders.
+
+        columns:
+          - name: order_id
+            data_tests:
+              - unique
+              - not_null
+
+          - name: customer_id
+            data_tests:
+              - not_null
+
+      - name: order_items
+        description: Raw line items associated with orders.
+
+        columns:
+          - name: order_id
+            data_tests:
+              - not_null
+
+          - name: product_id
+            data_tests:
+              - not_null

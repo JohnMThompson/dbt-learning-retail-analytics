@@ -1,0 +1,5 @@
+customer_id,customer_name,email,state
+1,Alice Johnson,alice@example.com,MN
+2,Bob Smith,bob@example.com,WI
+3,Carla Gomez,carla@example.com,MN
+4,David Lee,david@example.com,IL

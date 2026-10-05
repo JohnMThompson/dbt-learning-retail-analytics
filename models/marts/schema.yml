@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: One row per customer order.
+
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        data_tests:
+          - not_null
+
+      - name: order_revenue
+        data_tests:
+          - not_null
+
+  - name: dim_customers
+    description: One row per customer with customer attributes and order history.
+
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: order_count
+        data_tests:
+          - not_null
+
+      - name: lifetime_revenue
+        data_tests:
+          - not_null
